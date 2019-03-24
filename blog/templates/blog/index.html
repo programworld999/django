@@ -1,2 +1,20 @@
-<h3>{{ data }}
-ljhfohf
+{% extends 'blog/layout.html' %}
+
+{% block content %}
+
+<section style='margin-top: 80px'>
+<h3 style='padding: 10px'>{{ search_for }}</h3>
+<ul>
+{% for post in data %}
+
+<li><a href="/post?id={{ post.id }}"></h3>{{post.id}}. {{ post.title }} </h3></a>
+<h6 style='padding: 0px 25px 0px 15px'> {{ post.text|slice:"0:200" }} </h6></li>
+
+{% endfor %}
+
+</ul>
+
+
+</section>
+
+{% endblock %}

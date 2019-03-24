@@ -1,0 +1,11 @@
+{% extends 'blog/layout.html' %}
+
+{% block content %}
+
+<section style='margin-top: 70px'>
+{% for result in data %}
+{{ result.title }}<br>
+{% endfor %}
+</section>
+
+{% endblock %}

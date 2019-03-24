@@ -1,0 +1,32 @@
+{% extends 'blog/layout.html' %}
+
+{% block content %}
+
+<section style='margin-top: 40px'>
+
+<br /><br />
+{% for post in data%}
+<img src="thumbnail/{{ post.thumb }}" style="margin: auto; width: 80%; height: 300px; margin-left: 10%"/>
+<h2 style="text-align: center"> {{ post.title }} </h2>
+<p style="padding: 20px">{{ post.text }}</p>
+{% endfor %}
+
+<br/> <br/>
+<h3 style='margin-left: 5%'> Read More Like That</h3>
+
+{% for recomd in recommended%}
+{% for recomnd in recomd%}
+<br />
+
+<div  style='margin-left: 9%'>
+<a href='/post?id={{ recomnd.id }}'><h5>{{ recomnd.title }}</h5></a>
+<p>{{ recomnd.text|slice:"0:150" }}</p>
+</div>
+
+{% endfor %}
+
+{% endfor %}
+</section>
+
+
+{% endblock %}
